@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="styl.css">
+   <title>Stacja paliw</title>
+</head>
+<body>
+   <div id="baner">
+      <h1>Całodobowa stacja paliw</h1>
+   </div>
+   <div id="menu">
+      <a href="stacja.html"><img src="" alt="domek"></a>
+      <a href="obliczenia.html"><img src="" alt="dystrybutor"></a>
+      <a href="kwerendy.txt">Pobierz kwerendy</a>
+   </div>
+   <div id="lewy">
+      <h2>Orientacyjny koszt paliwa</h2>
+      Rodzaj paliwa (1-benzyna, 2-olej napędowy) <br>
+      <input type="number" id="rodzaj"><br>
+      Ile litrów?<br>
+      <input type="number" id="ile"><br>
+      <button onclick="obliczCene()">OBLICZ</button><br>
+      <p id="wynik"></p>
+   </div>
+   <div id="prawy">
+      <img src="" alt="samochód">
+   </div>
+   <footer>
+      Stronę opracował: MN
+   </footer>
+   <script>
+         function obliczCene(){
+            let a = document.getElementById('rodzaj').value;
+            let b = document.getElementById('ile').value;
+            let cena = 0;
+               if (a==1){
+                     cena = b * 5;
+               }
+               else if(a==2){
+                     cena = b * 6;
+               }
+               else {
+                     cena = 0;
+               }
+               document.getElementById("wynik").innerHTML=`koszt paliwa: ${cena} zł`;
+               document.getElementById('wynik').style = "text-align: left";
+        }
+   </script>
+</body>
+</html>
